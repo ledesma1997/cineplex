@@ -4,12 +4,12 @@ import GeneroItem from "../components/GeneroItem";
 
 const Generos = (props) => {
 useEffect(()=>{
-    cargarUsuarios();
+    cargarGeneros();
 },[]);
 
 const [arreglo,setArreglo] = React.useState([]);
 
-const cargarUsuarios = () =>{
+const cargarGeneros = () =>{
     fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=545fc94d35f8194b259e5a97845b5e67&language=es-MX')
     .then((response) => response.json())
     .then((json) => {

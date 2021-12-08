@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 
-import {View, Text, StyleSheet, TouchableOpacity, Alert} from 'react-native'
+import {View, Text, StyleSheet, TouchableOpacity, Alert, Image} from 'react-native'
 
 
 const PeliculaItem = (props) => {
@@ -29,6 +29,10 @@ const PeliculaItem = (props) => {
             <View >
                 <Text> {id} </Text>
                 <Text> {arreglo.original_title} </Text>
+                <Image source={{
+                    uri: `https://image.tmdb.org/t/p/w500${arreglo.poster_path}`
+                }} style = {{width:100,
+                    height:100}} />
                 <Text> {arreglo.tagline} </Text>
                 <Text> {arreglo.overview} </Text>
 

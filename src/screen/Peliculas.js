@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {Alert, FlatList, TouchableOpacity, StyleSheet, Text, View} from "react-native";
+import {Alert, FlatList, TouchableOpacity, StyleSheet, Text, View, Image} from "react-native";
 import PeliculaItem from "../components/PeliculaItem";
 
 
@@ -32,7 +32,6 @@ const Peliculas = (props) => {
                 <View style={styles.items}>
                     {
                         arreglo.map((item, index) => {
-
                             return (
                                 <TouchableOpacity key={index} onPress={() => {
                                         navigation.navigate("PeliculaItem", {
