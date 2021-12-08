@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Alert, FlatList, StyleSheet, Text, View } from "react-native";
-import UsuarioItem from "../components/UsuarioItem";
+import GeneroItem from "../components/GeneroItem";
 
-const EjemploFlatList = (props) => {
+const Generos = (props) => {
 useEffect(()=>{
     cargarUsuarios();
 },[]);
@@ -22,7 +22,7 @@ const cargarUsuarios = () =>{
   return (
     <FlatList
         data = {arreglo}
-        renderItem = {(item) => <UsuarioItem
+        renderItem = {(item) => <GeneroItem
                             nombre = {item.item.name}
                             id = {item.item.id}
                             navigation = {props.navigation}
@@ -32,4 +32,4 @@ const cargarUsuarios = () =>{
   );
 };
 
-export default EjemploFlatList;
+export default Generos;

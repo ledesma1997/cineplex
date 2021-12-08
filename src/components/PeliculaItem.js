@@ -7,7 +7,7 @@ const PeliculaItem = (props) => {
     useEffect(() => {
         cargarPelicula();
     }, []);
-    const id = props.route.params.id;
+    const {id} =  props.route.params;
     console.log(id)
 
     const [arreglo, setArreglo] = React.useState([]);

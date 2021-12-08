@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const UsuarioItem = (props) => {
+const GeneroItem = (props) => {
   return (
     <TouchableOpacity onPress = { ()=>{
       props.navigation.navigate("Peliculas", {
@@ -28,4 +28,4 @@ const UsuarioItem = (props) => {
   );
 };
 
-export default UsuarioItem;
+export default GeneroItem;

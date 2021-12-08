@@ -6,7 +6,7 @@ const Menu = (props) => {
     <ScrollView>
       
       <Button title="Bienvenido a CinePlex" onPress={()=>{
-        props.navigation.navigate("EjemploFlatList");
+        props.navigation.navigate("Generos");
       }}/> 
     </ScrollView>
   );

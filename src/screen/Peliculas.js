@@ -5,15 +5,15 @@ import PeliculaItem from "../components/PeliculaItem";
 
 const Peliculas = (props) => {
     useEffect(() => {
-        cargarUsuarios();
+        cargarPeliculas();
     }, []);
 
 
     const [arreglo, setArreglo] = React.useState([]);
-    const id = props.route.params.id;
-    const nombre = props.route.params.nombre;
 
-    const cargarUsuarios = () => {
+    const {id, nombre, navigation} = props.route.params;
+
+    const cargarPeliculas = () => {
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=545fc94d35f8194b259e5a97845b5e67&language=es-MX&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${id}&with_watch_monetization_types=flatrate`)
             .then((response) => response.json())
             .then((json) => {
@@ -27,7 +27,7 @@ const Peliculas = (props) => {
     return (
         <View style={styles.container}>
             <View style={styles.tasksWrapper}>
-                <Text style={styles.sectionTitle}> Peliculas {nombre} </Text>
+                <Text style={styles.sectionTitle}> Peliculas</Text>
 
                 <View style={styles.items}>
                     {
@@ -35,7 +35,7 @@ const Peliculas = (props) => {
 
                             return (
                                 <TouchableOpacity key={index} onPress={() => {
-                                    props.navigation.navigate("PeliculaItem", {
+                                        navigation.navigate("PeliculaItem", {
                                         id: item.id
                                     })
                                 }}>
