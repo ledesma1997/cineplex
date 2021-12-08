@@ -13,7 +13,6 @@ const cargarUsuarios = () =>{
     fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=545fc94d35f8194b259e5a97845b5e67&language=es-MX')
     .then((response) => response.json())
     .then((json) => {
-        console.log(json.genres);
         setArreglo(json.genres);
     })
     .catch(() => {
@@ -25,6 +24,7 @@ const cargarUsuarios = () =>{
         data = {arreglo}
         renderItem = {(item) => <UsuarioItem
                             nombre = {item.item.name}
+                            id = {item.item.id}
                             navigation = {props.navigation}
                             />}
         keyExtractor = {(item,index) => `e${item.id}`}
